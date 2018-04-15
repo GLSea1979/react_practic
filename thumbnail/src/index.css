@@ -4,6 +4,12 @@ body {
   font-family: sans-serif;
 }
 div {
-  margin: 15px;
-
+  margin: 5px;
+}
+.panel {
+  width: 40%;
+  float: left;
+}
+.users {
+  float: left;
 }

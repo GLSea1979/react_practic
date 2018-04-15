@@ -1,12 +1,18 @@
 body {
+  background-color: white;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
-div {
-  margin: 5px;
+
+h1 {
+  text-align: center;
 }
 .panel {
+  margin:  auto 3%;
+  background-color: grey;
+  border: 1px solid black;
+  padding: 10px;
   width: 40%;
   float: left;
 }

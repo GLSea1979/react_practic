@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class Background extends Component {
+class Background extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -32,6 +32,7 @@ componentDidMount() {
 render() {
   return (
     <div>
+      <p>This section was practicing pulling from another site, Randomuser.me</p>
       <h2>Random User</h2>
       <div>
         {this.state.pictures}

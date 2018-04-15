@@ -8,7 +8,7 @@
     "react-scripts": "1.1.4"
   },
   "scripts": {
-    "deploy": "yarn run build && surge -p build -d shaggy-ideas.surge.sh",
+    "deploy": "yarn run build && surge -p build --domain rainy-structure.surge.sh",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

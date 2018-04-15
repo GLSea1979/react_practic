@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from './Header';
 import Hacker from './Hacker';
 import Background from './What';
 
@@ -8,6 +9,7 @@ class App extends React.Component {
     return (
 
       <div>
+        <Header />
         <div className="panel">
           <Hacker />
         </div>

@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const API = 'https://hn.algolia.com/api/v1/search?query=';
 const DEFAULT_QUERY = 'redux';
 
 
 const withFetching = (url) => (Comp) =>
-  class withFetching extends Component {
+  class withFetching extends React.Component {
     constructor(props) {
       super(props);
 
@@ -48,6 +48,7 @@ const App = ({ data, isLoading, error }) => {
   return (
     <div>
       <div>
+        <p>This section is pulling data from Hacker News. I built it following an article by Robin Wieruch :</p>
         <h2>Hacker News</h2>
         <div>
           {hits.map(hit =>

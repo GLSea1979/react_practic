@@ -1,21 +1,58 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+const API = 'https://hn.algolia.com/api/v1/search?query=';
+const DEFAULT_QUERY = 'redux';
+
+const withFetching = (url) => (Comp) =>
+  class withFetching extends Component {
+    constructor(props) {
+      super(props);
+
+      this.state ={
+        data: {},
+        isLoading: false,
+        error: null,
+      };
+    }
+
+
+    componentDidMount() {
+      this.setState({ isLoading: true });
+
+      fetch(url)
+        .then(response => {
+          if(response.ok) {
+            return response.json();
+          } else {
+            throw new Error('Oh, Snap response is not right.');
+          }
+        })
+        .then(data => this.setState({ data, isLoading: false}))
+        .catch(error => this.setState({ error, isLoading: false}));
+    }
+
+    render() {
+      return <Comp { ...this.props } { ...this.state} />
+    }
   }
+
+
+const App = ({ data, isLoading, error }) => {
+  const hits = data.hits || [];
+
+  if (error) {
+    return <p>{error.message}</p>;
+  }
+
+  return (
+    <div>
+      {hits.map(hit =>
+        <div key=(hit.objectID)>
+          <a href={hit.url}>{hit.title}</a>
+        </div>
+      )}
+    </div>
+  );
 }
 
-export default App;
+export default withFetching(API + DEFAULT_QUERY)(App);  

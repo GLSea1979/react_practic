@@ -46,13 +46,16 @@ const App = ({ data, isLoading, error }) => {
 
   return (
     <div>
-      {hits.map(hit =>
-        <div key=(hit.objectID)>
-          <a href={hit.url}>{hit.title}</a>
-        </div>
-      )}
+      <h2>Hacker News</h2>
+      <div>
+        {hits.map(hit =>
+          <div key={hit.objectID}>
+            <a href={hit.url}>{hit.title}: {hit.author}</a>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
 
-export default withFetching(API + DEFAULT_QUERY)(App);  
+export default withFetching(API + DEFAULT_QUERY)(App);

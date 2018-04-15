@@ -46,14 +46,17 @@ const App = ({ data, isLoading, error }) => {
 
   return (
     <div>
-      <h2>Hacker News</h2>
       <div>
-        {hits.map(hit =>
-          <div key={hit.objectID}>
-            <a href={hit.url}>{hit.title}: {hit.author}</a>
-          </div>
-        )}
+        <h2>Hacker News</h2>
+        <div>
+          {hits.map(hit =>
+            <div key={hit.objectID}>
+              <a href={hit.url}>{hit.title}: {hit.author}</a>
+            </div>
+          )}
+        </div>
       </div>
+
     </div>
   );
 }

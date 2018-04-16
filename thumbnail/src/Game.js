@@ -12,8 +12,14 @@ class Number extends React.Component {
   };
 
   render() {
-    return <div
-      className="number">{this.props.value}</div>;
+    return
+      <div
+        className="number"
+        style={{ opacity: this.props.clickable ? 1 : .3 }}
+        onClick={this.handleClick}
+      >
+        {this.props.value}
+      </div>;
   }
 }
 

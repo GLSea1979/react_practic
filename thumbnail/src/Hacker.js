@@ -1,7 +1,7 @@
 import React from 'react';
 
 const API = 'https://hn.algolia.com/api/v1/search?query=';
-const DEFAULT_QUERY = 'redux';
+const DEFAULT_QUERY = 'atomic';
 
 
 const withFetching = (url) => (Comp) =>
@@ -48,7 +48,7 @@ const App = ({ data, isLoading, error }) => {
   return (
     <div>
       <div>
-        <p>This section is pulling data from Hacker News. I built it following an article by Robin Wieruch :</p>
+        <p>This section is pulling data from Hacker News. I built it following an article by Robin Wieruch. It is currently pulling all the articles that match the query of Atomic. </p>
         <h2>Hacker News</h2>
         <div>
           {hits.map(hit =>

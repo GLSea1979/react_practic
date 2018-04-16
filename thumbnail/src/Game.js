@@ -24,6 +24,18 @@ class Number extends React.Component {
 }
 
 class Game extends React.Component {
+  static bgColors = {
+    playing: '#ccc',
+    won: 'green',
+    lost: 'red',
+  };
+
+  state = {
+    gameStatus: 'new',
+    remainingSeconds: this.props.initialSeconds,
+    selectedIds: [],
+  };
+
   challengeNumbers = Array.from({
     length: this.props.challengeSize,
   }).map(() => {

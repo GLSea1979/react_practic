@@ -3,6 +3,7 @@ import Header from './Header';
 import Hacker from './Hacker';
 import Background from './What';
 import Clock from './Clock';
+import Link from './Link';
 
 
 class App extends React.Component {
@@ -22,7 +23,7 @@ class App extends React.Component {
           <Clock />
         </div>
         <div className="panel">
-
+          <Link />
         </div>
       </div>
     )

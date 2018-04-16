@@ -32,7 +32,7 @@ componentDidMount() {
 render() {
   return (
     <div>
-      <p>This section was practicing pulling from another site, Randomuser.me</p>
+      <p>In this section I wanted to practice pulling from another API, Randomuser.me, it is a data set of fake users. I am only grabbing their photo to display and their first name as an image alt.</p>
       <h2>Random User</h2>
       <div>
         {this.state.pictures}

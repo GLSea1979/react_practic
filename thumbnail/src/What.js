@@ -25,7 +25,6 @@ componentDidMount() {
       )
     })
     this.setState({pictures: pictures});
-    console.log('state', this.state.pictures);
   });
 }
 
